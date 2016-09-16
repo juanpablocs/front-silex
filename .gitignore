@@ -1,0 +1,5 @@
+node_modules/
+vendor/
+web/assets/
+composer.lock
+npm-debug.log

@@ -1,0 +1,30 @@
+{
+  "name": "front-silex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "cd web && php -S 0.0.0.0:7000 | echo \"open http://0.0.0.0:7000\" ",
+    "css": "node-sass --output-style compressed ./frontend/sass/main.scss -o ./web/assets/",
+    "js": "webpack",
+    "build:css": "npm run css",
+    "build:js": "npm run js",
+    "watch:css": "nodemon -e scss -x \"npm run build:css\"",
+    "watch:js": "nodemon -e js -x \"npm run build:js\"",
+    "start": "npm run build:css && npm run build:js && npm run serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "node-sass": "^3.10.0",
+    "nodemon": "^1.10.2",
+    "npm-run-all": "^3.1.0",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
