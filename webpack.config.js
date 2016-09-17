@@ -9,7 +9,7 @@ module.exports = {
     context : __dirname + '/frontend/es6',
     entry   : {
         app     : __dirname + '/frontend/es6/main.js',
-        vendor : ['underscore']
+        vendor : ['underscore', 'jp-router']
     },
     output  : {
         path      : __dirname + '/web/assets/',
