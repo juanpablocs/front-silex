@@ -3,7 +3,7 @@
  * @author Juan Pablo <juanpablocs21@gmail.com
  * @date 16/09/16.
  */
- 
+
 require_once __DIR__.'/../vendor/autoload.php'; 
 
 $app = new Silex\Application(); 
@@ -20,5 +20,12 @@ $app->get('/', function() use($app) {
     'name' => 'Juan',
   ));
 }); 
+
+$app->get('/user/{username}', function($username) use($app) { 
+  // return 'Hello  World'; 
+  return $app['twig']->render('user.twig', array(
+    'name' => $username,
+  ));
+});
 
 $app->run(); 

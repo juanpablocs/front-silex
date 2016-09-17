@@ -2,10 +2,18 @@
  * @author Juan Pablo <juanpablocs21@gmail.com
  * @date 16/09/16.
  */
- 
+
 import _ from 'underscore';
+import Router from 'jp-router';
 
-let hello = ()=> "Hello World";
+const app = new Router({location:window.location.pathname});
 
-console.log(hello());
-console.log(_.map([1,2,3], n => n*3));
+app.map('/', ()=>{
+	let hello = ()=> "Hello World";
+	console.log(hello());
+	console.log(_.map([1,2,3], n => n*3));
+});
+
+app.map('/user/:username', (username)=>{
+	console.log("Router js " + username);
+});
